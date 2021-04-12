@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ClientesRoutingModule } from './clientes-routing.module';
 
@@ -19,7 +20,9 @@ import { AgregarClienteComponent } from './pages/agregar-cliente/agregar-cliente
   imports: [
     CommonModule,
     ClientesRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ClientesModule { }

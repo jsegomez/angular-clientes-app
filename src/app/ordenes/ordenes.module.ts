@@ -7,6 +7,10 @@ import { DetalleOrdenComponent } from './pages/detalle-orden/detalle-orden.compo
 import { AgregarOrdenComponent } from './pages/agregar-orden/agregar-orden.component';
 import { MainOrdenesComponent } from './pages/main-ordenes/main-ordenes.component';
 
+import { SharedModule } from '../shared/shared.module';
+
+
+
 @NgModule({
   declarations: [          
     MainOrdenesComponent,
@@ -16,7 +20,8 @@ import { MainOrdenesComponent } from './pages/main-ordenes/main-ordenes.componen
   ],
   imports: [
     CommonModule,
-    OrdenesRoutingModule
+    OrdenesRoutingModule,
+    SharedModule
   ]
 })
 export class OrdenesModule { }

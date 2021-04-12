@@ -7,6 +7,8 @@ import { ListadoProductosComponent } from './pages/listado-productos/listado-pro
 import { DetalleProductoComponent } from './pages/detalle-producto/detalle-producto.component';
 import { AgregarProductoComponent } from './pages/agregar-producto/agregar-producto.component';
 
+import { SharedModule } from '../shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { AgregarProductoComponent } from './pages/agregar-producto/agregar-produ
   ],
   imports: [
     CommonModule,
-    ProductosRoutingModule
+    ProductosRoutingModule,
+    SharedModule
   ]
 })
 export class ProductosModule { }

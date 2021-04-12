@@ -1,1 +1,52 @@
-<p>agregar-cliente works!</p>
+<div class="container animate__animated animate__fadeIn">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 mt-5">
+      <div class="card card-secondary">
+          <div class="card-header">
+            <h3 class="card-title">Registrar cliente</h3>
+          </div>
+          <!-- /.card-header -->
+          <!-- form start -->
+          <form [formGroup]="formCliente" (ngSubmit)="crearCliente()">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="nombre">Nombres</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  placeholder="Nombres"
+                  formControlName="nombre"
+                >
+                <div class="campo-invalido">
+                  <small *ngIf="validarCampo('nombre')" class="text-danger">
+                    Nombre debe tener al menos 3 caracteres
+                  </small>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="apellido">Apellidos</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="apellido"
+                  placeholder="Apellidos"
+                  formControlName="apellido"
+                >
+                <div class="campo-invalido">
+                  <small *ngIf="validarCampo('apellido')" class="text-danger">
+                    Apellido debe tener al menos 3 caracteres
+                  </small>
+                </div>
+              </div>
+            </div>
+            <!-- /.card-body -->
+      
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary">Registrar</button>
+            </div>
+          </form>
+        </div>
+  </div>
+  </div>
+</div>
