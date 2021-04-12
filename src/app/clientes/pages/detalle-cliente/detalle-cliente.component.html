@@ -1,1 +1,38 @@
-<p>detalle-cliente works!</p>
+<div class="container animate__animated animate__fadeIn">
+    <div class="row justify-content-center" *ngIf="cliente">
+        <div class="col-12 col-md-7 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="mb-3">Detalles de cliente {{ cliente.nombre + ' ' + cliente.apellidos}}</h5>
+                    <table class="table">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Nombres:</th>
+                            <td>{{ cliente.nombre }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Apellidos:</th>
+                            <td>{{ cliente.apellidos }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Teléfono:</th>
+                            <td>{{ cliente.telefono }}</td>                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Correo:</th>
+                            <td>{{ cliente.correo }}</td>                            
+                          </tr>
+                          <tr>
+                            <th scope="row">NIT:</th>
+                            <td>{{ cliente.nit }}</td>                            
+                          </tr>
+                        </tbody>
+                      </table>                      
+                </div>                
+              </div>
+              <button class="btn btn-primary btn-block mt-3" (click)="regresar()">
+                  Regresar
+              </button>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { catchError, map } from 'rxjs/operators';
+
+import Swal from 'sweetalert2';
+
 import { Cliente } from '../interfaces/cliente.interface';
 
 @Injectable({
@@ -24,6 +28,18 @@ export class ClienteService {
   }
 
   registrarCliente(cliente: Cliente): Observable<Cliente>{
-    return this.http.post<Cliente>(this._urlBase, cliente);
+    return this.http.post<Cliente>(this._urlBase, cliente).pipe(
+      catchError( e => {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'Error al registrar cliente',          
+          showConfirmButton: false,
+          timer: 3500
+        })
+
+        return throwError(e);
+      })
+    );
   }
 }

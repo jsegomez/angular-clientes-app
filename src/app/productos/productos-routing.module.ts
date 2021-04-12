@@ -10,9 +10,9 @@ const routes: Routes = [
     path: '',
     component: MainProductosComponent,
     children: [
-      { path: 'listado-productos',  component: ListadoProductosComponent },
-      { path: 'detalle-producto',   component: DetalleProductoComponent  },
-      { path: 'agregar-producto',   component: AgregarProductoComponent  }
+      { path: 'listado-productos',    component: ListadoProductosComponent },
+      { path: 'detalle-producto/:id', component: DetalleProductoComponent  },
+      { path: 'agregar-producto',     component: AgregarProductoComponent  }
     ]
   }
 ];

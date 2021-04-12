@@ -9,12 +9,12 @@
           <!-- form start -->
           <form [formGroup]="formCliente" (ngSubmit)="crearCliente()">
             <div class="card-body">
+
               <div class="form-group">
                 <label for="nombre">Nombres</label>
-                <input
+                <input                  
                   type="text"
-                  class="form-control"
-                  id="nombre"
+                  class="form-control"                  
                   placeholder="Nombres"
                   formControlName="nombre"
                 >
@@ -24,26 +24,82 @@
                   </small>
                 </div>
               </div>
+
               <div class="form-group">
                 <label for="apellido">Apellidos</label>
                 <input
                   type="text"
-                  class="form-control"
-                  id="apellido"
+                  class="form-control"                  
                   placeholder="Apellidos"
-                  formControlName="apellido"
+                  formControlName="apellidos"
                 >
                 <div class="campo-invalido">
-                  <small *ngIf="validarCampo('apellido')" class="text-danger">
+                  <small *ngIf="validarCampo('apellidos')" class="text-danger">
                     Apellido debe tener al menos 3 caracteres
                   </small>
                 </div>
               </div>
+
+              <div class="form-group">
+                <label for="nombre">Teléfono</label>
+                <input         
+                  maxlength="8"         
+                  type="text"
+                  class="form-control"                  
+                  placeholder="Teléfono"
+                  formControlName="telefono"
+                  (keypress)="onlyNumber($event)"              
+                >
+                <div class="campo-invalido">
+                  <small *ngIf="validarCampo('telefono')" class="text-danger">
+                    Teléfono debe tener 8 digitos
+                  </small>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="nombre">NIT</label>
+                <input
+                  maxlength="14"
+                  type="text"
+                  class="form-control"                  
+                  placeholder="NIT"
+                  formControlName="nit"
+                  (keypress)="onlyNumber($event)"
+                >
+                <div class="campo-invalido">
+                  <small *ngIf="validarCampo('nit')" class="text-danger">
+                    NIT debe tener 14 dígitos sin guiones
+                  </small>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="nombre">Correo electrónico</label>
+                <input
+                  type="email"
+                  class="form-control"                  
+                  placeholder="Correo electrónico"
+                  formControlName="correo"
+                >
+                <div class="campo-invalido">
+                  <small *ngIf="validarCampo('correo')" class="text-danger">
+                    Ingrese un correo electrónico valido
+                  </small>
+                </div>
+              </div>
+
             </div>
             <!-- /.card-body -->
       
             <div class="card-footer">
-              <button type="submit" class="btn btn-primary">Registrar</button>
+              <button type="submit" class="btn btn-primary mx-1">
+                Registrar
+              </button>
+
+              <button type="button" class="btn btn-danger mx-1" [routerLink]="['/clientes/listado-clientes']">
+                Cancelar
+              </button>
             </div>
           </form>
         </div>

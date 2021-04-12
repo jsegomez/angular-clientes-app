@@ -1,3 +1,7 @@
 .campo-invalido{
     height: 15px;
 }
+
+.puntero{
+    cursor: pointer;
+}

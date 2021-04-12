@@ -1,1 +1,45 @@
-<p>listado-clientes works!</p>
+<div class="container animate__animated animate__fadeIn">
+  <div class="row">
+    <div class="col mt-5">
+      <button class="btn btn-primary" [routerLink]="['/clientes/agregar-cliente']">
+        Agregar cliente
+      </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 table-responsive mt-4">
+      <h5>Listado de clientes</h5>
+      <table class="table table-striped">
+        <thead class="bg-dark text-center">
+          <tr>
+            <th>Id</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Teléfono</th>
+            <th>Correo electrónico</th>
+            <th>NIT</th>            
+            <th>Detalle cliente</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr *ngFor="let cliente of clientes"  class="puntero">
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.apellidos }}</td>
+            <td>{{ cliente.telefono }}</td>
+            <td>{{ cliente.correo }}</td>
+            <td>{{ cliente.nit }}</td>
+            <td>
+              <button class="btn btn-sm btn-primary" (click)="detalleCliente(cliente.id)">
+                Detalles
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- /.col -->
+  </div>
+
+</div>

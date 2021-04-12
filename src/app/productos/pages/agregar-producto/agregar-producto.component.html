@@ -1,1 +1,65 @@
-<p>agregar-producto works!</p>
+<div class="container animate__animated animate__fadeIn">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-8 mt-5">
+            <div class="card card-secondary">
+                <div class="card-header">
+                    <h3 class="card-title">Registrar producto</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form [formGroup]="formProducto" (ngSubmit)="crearProducto()">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Nombre del producto"
+                                formControlName="nombre"
+                            >
+                            <div class="campo-invalido">
+                                <small *ngIf="validarCampo('nombre')" class="text-danger">
+                                    Nombre producto debe tener al menos 5 caracteres
+                                </small>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripción</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Descripción"
+                                formControlName="descripcion"
+                            >
+                            <div class="campo-invalido">
+                                <small *ngIf="validarCampo('descripcion')" class="text-danger">
+                                    Descripción producto debe tener al menos 10 caracteres
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Precio</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                placeholder="Precio"
+                                formControlName="precio"
+                            >
+                            <div class="campo-invalido">
+                                <small *ngIf="validarCampo('precio')" class="text-danger">
+                                    Favor indicar precio del producto
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
