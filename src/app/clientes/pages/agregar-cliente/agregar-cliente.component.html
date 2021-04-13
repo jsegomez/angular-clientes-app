@@ -1,4 +1,4 @@
-<div class="container animate__animated animate__fadeIn">
+<div fadeIn>
   <div class="row justify-content-center">
     <div class="col-12 col-md-8 mt-5">
       <div class="card card-secondary">
@@ -19,9 +19,9 @@
                   formControlName="nombre"
                 >
                 <div class="campo-invalido">
-                  <small *ngIf="validarCampo('nombre')" class="text-danger">
+                  <p *ngIf="validarCampo('nombre')" mensajeError>
                     Nombre debe tener al menos 3 caracteres
-                  </small>
+                  </p>
                 </div>
               </div>
 
@@ -34,9 +34,9 @@
                   formControlName="apellidos"
                 >
                 <div class="campo-invalido">
-                  <small *ngIf="validarCampo('apellidos')" class="text-danger">
+                  <p *ngIf="validarCampo('apellidos')" mensajeError>
                     Apellido debe tener al menos 3 caracteres
-                  </small>
+                  </p>
                 </div>
               </div>
 
@@ -51,9 +51,9 @@
                   (keypress)="onlyNumber($event)"              
                 >
                 <div class="campo-invalido">
-                  <small *ngIf="validarCampo('telefono')" class="text-danger">
+                  <p *ngIf="validarCampo('telefono')" mensajeError>
                     Teléfono debe tener 8 digitos
-                  </small>
+                  </p>
                 </div>
               </div>
 
@@ -68,9 +68,9 @@
                   (keypress)="onlyNumber($event)"
                 >
                 <div class="campo-invalido">
-                  <small *ngIf="validarCampo('nit')" class="text-danger">
+                  <p *ngIf="validarCampo('nit')" mensajeError>
                     NIT debe tener 14 dígitos sin guiones
-                  </small>
+                  </p>
                 </div>
               </div>
 
@@ -83,9 +83,9 @@
                   formControlName="correo"
                 >
                 <div class="campo-invalido">
-                  <small *ngIf="validarCampo('correo')" class="text-danger">
+                  <p *ngIf="validarCampo('correo')" mensajeError>
                     Ingrese un correo electrónico valido
-                  </small>
+                  </p>
                 </div>
               </div>
 

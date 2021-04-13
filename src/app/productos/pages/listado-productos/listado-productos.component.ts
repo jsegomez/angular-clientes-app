@@ -32,4 +32,8 @@ export class ListadoProductosComponent implements OnInit {
     this.router.navigate(['/productos/agregar-producto']);
   }
 
+  detalleProducto(idProducto: string | undefined){
+    this.router.navigate([`/productos/detalle-producto/${idProducto}`]);
+  }
+
 }

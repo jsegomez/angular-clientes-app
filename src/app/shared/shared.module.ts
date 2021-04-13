@@ -8,13 +8,18 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
+// Directivas
+import { ErrorMsgDirective } from './directives/error-msg.directive';
+import { AnimacionesDirective } from './directives/animaciones.directive';
 
 @NgModule({
   declarations: [
     NotFoundComponent,    
     FooterComponent,
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    ErrorMsgDirective,
+    AnimacionesDirective
   ],
   imports: [
     CommonModule,
@@ -24,7 +29,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     NotFoundComponent,
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    ErrorMsgDirective,
+    AnimacionesDirective
   ]
 })
 export class SharedModule { }

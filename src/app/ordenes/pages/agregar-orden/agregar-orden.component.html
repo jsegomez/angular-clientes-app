@@ -1,1 +1,70 @@
-<p>agregar-orden works!</p>
+<div fadeIn>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 mt-5">
+            <div class="card card-secondary">
+                <div class="card-header">
+                    <h3 class="card-title">Registrar cliente</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form [formGroup]="formOrdenes" (ngSubmit)="guardar()">
+                    <div class="card-body">
+
+                        <div class="form-group">
+                            <label for="nombre">Id Cliente</label>
+                            <input type="text" class="form-control" placeholder="ID Cliente"
+                                formControlName="idCliente">
+                            <div class="campo-invalido">
+                                <p *ngIf="validarCampo('idCliente')" mensajeError>
+                                    Favor indicar ID de cliente
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nombre">Productos</label>
+                            <div class="input-group">
+                                <input class="form-control" [formControl]="addProducto" placeholder="Agregar producto"
+                                    (keyup.enter)="agregarProducto()">
+                                <button class="btn btn-outline-primary" type="button" (click)="agregarProducto()">
+                                    Agregar
+                                </button>
+                            </div>
+
+                        </div>
+
+                            
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label">Lista productos</label>
+                            <div class="col-sm-9" formArrayName="producto">
+                                <div
+                                    class="input-group mb-1"
+                                    *ngFor="let item of productosArr.controls; let i = index"
+                                >
+                                    <input class="form-control" [formControlName]="i">
+                                    <button class="btn btn-outline-danger" type="button" (click)="borrarProducto(i)">
+                                    Eliminar
+                                </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary mx-1">
+                            Registrar
+                        </button>
+
+                        <button type="button" class="btn btn-danger mx-1" [routerLink]="['/clientes/listado-clientes']">
+                            Cancelar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

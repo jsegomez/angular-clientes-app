@@ -93,34 +93,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a [routerLink]="[ '/ordenes/listado-ordenes']" routerLinkActive="active" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>General</p>
+                  <p>Lista de ordemes</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
+                <a [routerLink]="[ '/ordenes/agregar-orden']" routerLinkActive="active" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Icons</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/ribbons.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ribbons</p>
+                  <p>Crear orden</p>
                 </a>
               </li>
             </ul>
           </li>
-
-
-          <!-- <li class="nav-header">LABELS</li> -->
-          <!-- <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-danger"></i>
-              <p class="text">Important</p>
-            </a>
-          </li> -->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

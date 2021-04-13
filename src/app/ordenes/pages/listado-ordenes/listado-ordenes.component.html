@@ -1,1 +1,37 @@
-<p>listado-ordenes works!</p>
+<div fadeIn>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 mt-5">
+        <button class="btn btn-primary" [routerLink]="['/ordenes/agregar-orden']">
+          Crear orden
+        </button>
+      </div>
+    </div>
+  
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 table-responsive mt-4">
+        <h5>Listado de ordenes</h5>
+        <table class="table table-striped">
+          <thead class="bg-dark text-center">
+            <tr>
+              <th>Id orden</th>
+              <th>Id cliente</th>
+              <th>Cantidad productos</th>
+              <th>Cantidad</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <tr *ngFor="let orden of ordenes; let i = index">
+              <td>{{ orden.idOrden }}</td>
+              <td>{{ orden.idCliente }}</td>
+              <td>{{ orden.productos.length }}</td>
+              <td>{{ orden.cantidad }}</td>
+              <td>{{ orden.fecha }}</td>              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- /.col -->
+    </div>
+  
+  </div>
